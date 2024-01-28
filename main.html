@@ -19,24 +19,41 @@
       <span style="display: flex;">
       <!-- USER INPUT GOES HERE -->
       <div class="input" id="input" style="width: 200px; height: 50px;">
-        <input type="text" id="inputText" style="width: 190px; height: 30px;">
-        <select style="width: 200px; height: 20px;">
+        <input type="text" id="inputText" style="width: 190px; height: 30px; text-align: center; border-color: black;">
+        <select style="width: 200px; height: 20px;" id="opt1">
             <option value="Celsius">Celsius</option>
             <option value="Fahrenheit">Fahrenheit</option>
         </select>
       </div>
       <!-- OUTPUT GOES HERE -->
       <div class="output" id="output" style="width: 200px; height: 50px;">
-          <div id="outputText" style="width: 200px; height: 30px;">0</div>
-          <select style="width: 200px; height: 20px;">
+          <div id="outputText" style="width: 200px; height: 30px; border-style: solid; border-color: black; text-align: center;"></div>
+          <select style="width: 200px; height: 20px;" id="opt2">
             <option value="Celsius">Celsius</option>
             <option value="Fahrenheit">Fahrenheit</option>
         </select>
       </div>
       </span>
     </div>
+    <button onclick="submitted()">Submit</button>
     <script>
-     
+     function submitted(){
+     input = document.querySelector("#inputText").value;
+     opt1 = document.querySelector("#opt1").value;
+     opt2 = document.querySelector("#opt2").value;
+     if (opt1===opt2){
+      alert("Both values are the same!");
+     }else if (opt1==="Celsius"){
+      var output = (input*(9/5))+32;
+      var roundedNum = Math.round((output + Number.EPSILON)*100)/100;
+      document.querySelector("#outputText").textContent = roundedNum;
+     }else if (opt1==="Fahrenheit"){
+      var output = (input-32)*(5/9);
+      var roundedNum = Math.round((output + Number.EPSILON)*100)/100;
+      document.querySelector("#outputText").textContent = roundedNum;
+     }else{
+      alert("Error in input!")
+     }}
     </script>
   </body>
 </html>
