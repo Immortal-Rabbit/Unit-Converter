@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <!-- I'M NEW TO HTML SO I MIGHT MAKE ERRORS -->
-<html>
+<html lang="en">
   <head>
     <title></title>
     <style>
@@ -15,15 +15,25 @@
   <body>
     <!-- EVERTHING GOES IN THIS DIV -->
     <div class="main" id="main">
+      <br>
+      <span style="display: flex;">
       <!-- USER INPUT GOES HERE -->
       <div class="input" id="input" style="width: 200px; height: 50px;">
-        <input type="text" id="inputText" style="width: 200px; height: 30px;">
-        <select style="width: 200px; height: 20px;"></select>
+        <input type="text" id="inputText" style="width: 190px; height: 30px;">
+        <select style="width: 200px; height: 20px;">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
       </div>
       <!-- OUTPUT GOES HERE -->
-      <div class="output" id="output">
-        
+      <div class="output" id="output" style="width: 200px; height: 50px;">
+          <div id="outputText" style="width: 200px; height: 30px;">0</div>
+          <select style="width: 200px; height: 20px;">
+            <option value="Celsius">Celsius</option>
+            <option value="Fahrenheit">Fahrenheit</option>
+        </select>
       </div>
+      </span>
     </div>
     <script>
      
